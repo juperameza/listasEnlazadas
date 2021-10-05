@@ -14,13 +14,19 @@ export default class Grupo{
     }
     listar(){
         let aux=this.inicio;
-        let resultado=`${aux.nombre} ${aux.edad} 
-`
-        do {
+        let resultado=aux.info();
+        while(aux.siguiente!=null){
             aux=aux.siguiente;
-            resultado+=`${aux.nombre} ${aux.edad}
-`  
-        }while(aux.siguiente!=null)
+            resultado+=aux.info();
+
+        }
         return resultado;
+    }
+    ultimo(){
+        let aux=this.inicio;
+        while(aux.siguiente!=null)
+        aux=aux.siguiente;
+    
+    return aux;
     }
 }

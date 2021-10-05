@@ -4,13 +4,12 @@ import Persona from "./persona.js"
 let grupo = new Grupo();
 let  persona = new Persona("Juan",18);
 grupo.agregar(persona)
-let  siguiente = new Persona("Pedro",18);
-grupo.agregar(siguiente)
-siguiente = new Persona("Ernesto",18);
-grupo.agregar(siguiente)
-siguiente = new Persona("Manuel",18);
-grupo.agregar(siguiente)
-siguiente = new Persona("Roy",18);
-grupo.agregar(siguiente)
+for (let i = 0; i < 1000; i++) {
+    let r = (Math.random() + 1).toString(36).substring(7);
+ 
+    grupo.agregar(new Persona(r,Math.floor(Math.random()*80)))
+}
+
 console.log(grupo.listar())
-console.log(grupo)
+console.log(grupo.ultimo())
+

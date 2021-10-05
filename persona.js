@@ -4,5 +4,8 @@ export default class Persona{
         this.edad=edad;
         this.siguiente=null;
     }
-   
+   info(){
+       return `${this.nombre} ${this.edad}
+`
+   }
 }
